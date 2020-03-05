@@ -19,6 +19,9 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "assets/icomoon/style.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "aos.css",
         "styles.css"
       ],
       "scripts": [],

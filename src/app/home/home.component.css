@@ -1,0 +1,8 @@
+.site-blocks-cover, .site-blocks-cover > .container > .row {
+    min-height: 300px;
+    height: calc(0vh);
+}
+
+.site-blocks-cover h1 {
+    font-size: 40px;
+}
