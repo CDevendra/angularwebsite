@@ -6,14 +6,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ShopSingleComponent } from './shop-single/shop-single.component';
 
 const routes: Routes = [
-	{ path: '', component: HomeComponent, pathMatch: 'full'}, 
-	// { path: 'header', component: HeaderComponent }, 
-	// { path: 'footer', component: FooterComponent }, 
-	{ path: 'home', component: HomeComponent }, 
-	{ path: 'cart', component: CartComponent }, 
-	// { path: '**', redirectTo: '' },
+	{ 	path: '', redirectTo: 'home', pathMatch: 'full'},
+	{ 	path: 'home', component: HomeComponent,
+		// children: [
+		// 	{ path: 'shop-single', component: ShopSingleComponent }
+		// ] 
+	}, 
+	{ 	path: 'cart', component: CartComponent }, 
+	{ 	path: 'home/shop-single/:id', component: ShopSingleComponent }, 
+	// { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({

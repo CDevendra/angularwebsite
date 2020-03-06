@@ -1,3 +1,4 @@
+import { StaticData } from './data/staticData';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -8,6 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
+import { ShopSingleComponent } from './shop-single/shop-single.component';
+import { ExpertsInformationComponent } from './experts-information/experts-information.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,9 @@ import { AppRoutingModule } from './app.routing';
     CartComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ShopSingleComponent,
+    ExpertsInformationComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,7 @@ import { AppRoutingModule } from './app.routing';
     // RouterModule
 		// RouterModule.forRoot(AppRoutes, {enableTracing: false,})
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [StaticData],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

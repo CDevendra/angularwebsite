@@ -6,3 +6,21 @@
 .site-blocks-cover h1 {
     font-size: 40px;
 }
+.card-deck{
+    width: 16rem; 
+    margin: 5px 10px; 
+    /* border: 1px solid gray; */
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(212, 212, 212, 0.2), 0 6px 20px 0 rgba(202, 202, 202, 0.19);
+}
+div.card-deck a img {
+    width: 100%;
+    height: auto;
+}
+.content{
+    overflow: hidden;
+    /* width:100px; */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
