@@ -19,7 +19,7 @@ export class ShopSingleComponent implements OnInit {
 		this.productId = this._activatedRoute.snapshot.paramMap.get("id");
 		let productList = this._staticData.getProductList();
 
-		debugger
+		
 		this.selectedProduct  = productList.find(p => p.id == this.productId);
 	}
 
