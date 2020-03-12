@@ -27,4 +27,9 @@ export class ShopSingleComponent implements OnInit {
       this._router.navigate(['product']);
    }
 
+   addToCart(selectedProduct){
+	debugger
+	
+   }
+
 }

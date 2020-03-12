@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ShopSingleComponent } from './shop-single/shop-single.component';
 import { ExpertsInformationComponent } from './experts-information/experts-information.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ExpertsInformationComponent } from './experts-information/experts-infor
     ExpertsInformationComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule
     // RouterModule

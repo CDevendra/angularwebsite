@@ -26,34 +26,37 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <!-- <tr><td>{{cartProduct|json}}</td></tr> -->
+              <tr *ngFor="let product of cartProduct; let i=index;">                
                 <td class="product-thumbnail">
-                  <img src="../assets/images/product_02.png" alt="Image" class="img-fluid">
+                  <img src="{{product.imgSrc}}" alt="Image" class="img-fluid">
                 </td>
                 <td class="product-name">
-                  <h2 class="h5 text-black">Ibuprofen</h2>
+                  <h2 class="h5 text-black">{{product.name}}</h2>
                 </td>
-                <td>$55.00</td>
+                <td>{{product.price}}</td>
                 <td>
                   <div class="input-group mb-3" style="max-width: 120px;">
                     <div class="input-group-prepend">
-                      <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
+                      <button [disabled]="product.quantity == 0" class="btn btn-outline-primary js-btn-minus" type="button" (click)="removeProductQuantity(product, i)">&minus;</button>
                     </div>
-                    <input type="text" class="form-control text-center" value="1" placeholder=""
-                      aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    <!-- [(ngModel)]="singleProductTotal" name="singleProductTotal" -->
+                    <!-- value="1" -->
+                    <span style="border: 1px solid #adb5bd;padding: 4px 15px;">{{product.quantity}}</span>
+                    <!-- <input type="text" class="form-control text-center" [(ngModel)]="product.quantity" name="quantity{{i}}"  placeholder=""
+                      aria-label="Example text with button addon" aria-describedby="button-addon1"> -->
                     <div class="input-group-append">
-                      <button class="btn btn-outline-primary js-btn-plus" type="button">
-                        <!-- &plus; -->
+                      <button  class="btn btn-outline-primary js-btn-plus" type="button" (click)="addProductQuantity(product, i)">
+                        &#43;
                       </button>
                     </div>
                   </div>
-
                 </td>
-                <td>$49.00</td>
-                <td><a href="#" class="btn btn-primary height-auto btn-sm">X</a></td>
+                <td>{{product.totalPrice}}</td>
+                <td><button class="btn btn-primary height-auto btn-sm" (click)="removeFromCart(i)">X</button></td>
               </tr>
 
-              <tr>
+              <!-- <tr>
                 <td class="product-thumbnail">
                   <img src="../assets/images/product_01.png" alt="Image" class="img-fluid">
                 </td>
@@ -70,7 +73,7 @@
                       aria-label="Example text with button addon" aria-describedby="button-addon1">
                     <div class="input-group-append">
                       <button class="btn btn-outline-primary js-btn-plus" type="button">
-                        <!-- &plus; -->
+                       
                       </button>
                     </div>
                   </div>
@@ -78,7 +81,7 @@
                 </td>
                 <td>$49.00</td>
                 <td><a href="#" class="btn btn-primary height-auto btn-sm">X</a></td>
-              </tr>
+              </tr> -->
             </tbody>
           </table>
         </div>
@@ -118,10 +121,10 @@
             </div>
             <div class="row mb-3">
               <div class="col-md-6">
-                <span class="text-black">Subtotal</span>
+                <span class="text-black">Delivery Fee</span>
               </div>
               <div class="col-md-6 text-right">
-                <strong class="text-black">$230.00</strong>
+                <strong class="text-black">0</strong>
               </div>
             </div>
             <div class="row mb-5">
@@ -129,7 +132,7 @@
                 <span class="text-black">Total</span>
               </div>
               <div class="col-md-6 text-right">
-                <strong class="text-black">$230.00</strong>
+                <strong class="text-black">{{totalCartAmount}}</strong>
               </div>
             </div>
 
